@@ -71,52 +71,54 @@ namespace Presentacion.Controllers
             return resultado.IsSuccessStatusCode;
         }
         #endregion
-        #region Habitación
 
-        //MÉTODO PARA LISTAR HABITACIÓN EN DB
-        public async Task<List<HabitacionModel>> ListarHabitacion(HabitacionModel P_Entidad)
+        #region CHOFER
+
+        //MÉTODO PARA LISTAR CHOFER EN DB
+        public async Task<List<ChoferModel>> ListarChofer(ChoferModel P_Entidad)
         {
-            List<HabitacionModel> lstresultados = new List<HabitacionModel>();
+            List<ChoferModel> lstresultados = new List<ChoferModel>();
             GestorDeConexiones();
-            string url = "api/Seguridad/ConsultarHabitacion";
+            string url = "api/Proyecto2/ConsultarChofer";
             HttpResponseMessage resultado = await Cliente.GetAsync(url);
 
             if(resultado.IsSuccessStatusCode)
             {
               var convertirAstring = await resultado.Content.ReadAsStringAsync();
-              lstresultados = JsonConvert.DeserializeObject<List<HabitacionModel>>(convertirAstring);
+              lstresultados = JsonConvert.DeserializeObject<List<ChoferModel>>(convertirAstring);
             }
 
             return lstresultados;
         }
 
-        //MÉTODO PARA AGREGAR HABITACIÓN EN DB
-        public async Task<bool> AgregarHabitacion(HabitacionModel P_Modelo)
+        //MÉTODO PARA AGREGAR CHOFER EN DB
+        public async Task<bool> AgregarChofer(ChoferModel P_Modelo)
         {
             GestorDeConexiones();
-            string url = "api/Seguridad/AgregarHabitacion";
+            string url = "api/Proyecto2/AgregarChofer";
             HttpResponseMessage resultado = await Cliente.PostAsJsonAsync(url, P_Modelo);
             return resultado.IsSuccessStatusCode;
         }
 
-        //MÉTODO PARA ELIMINAR HABITACIÓN EN DB
-        public async Task<bool> EliminarHabitacion(HabitacionModel P_Modelo)
+        //MÉTODO PARA ELIMINAR CHOFER EN DB
+        public async Task<bool> EliminarChofer(ChoferModel P_Modelo)
         {
             GestorDeConexiones();
-            string url = "api/Seguridad/EliminarHabitacion";
+            string url = "api/Proyecto2/EliminarChofer";
             HttpResponseMessage resultado = await Cliente.PostAsJsonAsync(url, P_Modelo);
             return resultado.IsSuccessStatusCode;
         }
 
-        //MÉTODO PARA MODIFICAR HABITACIÓN EN DB
-        public async Task<bool> ModificarHabitacion(HabitacionModel P_Modelo)
+        //MÉTODO PARA MODIFICAR CHOFER EN DB
+        public async Task<bool> ModificarChofer(ChoferModel P_Modelo)
         {
             GestorDeConexiones();
-            string url = "api/Seguridad/ModificarHabitacion";
+            string url = "api/Proyecto2/ModificarChofer";
             HttpResponseMessage resultado = await Cliente.PostAsJsonAsync(url, P_Modelo);
             return resultado.IsSuccessStatusCode;
         }
         #endregion
+
         #region Reserva
         public async Task<List<ReservaModel>> ListarReserva()
         {
