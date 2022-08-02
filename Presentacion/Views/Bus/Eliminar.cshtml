@@ -1,0 +1,45 @@
+﻿@model Presentacion.Models.BusModel
+
+
+@{
+    ViewData["Title"] = "Eliminar";
+}
+
+<h1>Eliminación Bus</h1>
+
+<h3>¿Seguro que desea eliminar este registro?</h3>
+<div>
+    <h4>ClienteModel</h4>
+    <hr />
+    <dl class="row">
+
+        <dt class="col-sm-2">
+
+            @Html.DisplayNameFor(model => model.PlacaUnidad)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(model => Model.PlacaUnidad)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NumeroUnidad)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NumeroUnidad)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EstadoUnidad)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EstadoUnidad)
+        </dd>
+    </dl>
+
+    <form asp-action="Eliminar_Bus" asp-controller="Bus" method="post" >
+        <input type="submit" value="Eliminar_Bus" class="btn btn-danger" /> |
+        <a asp-action="Index">Volver a la lista</a>
+    </form>
+
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
