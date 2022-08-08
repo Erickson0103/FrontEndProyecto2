@@ -119,40 +119,43 @@ namespace Presentacion.Controllers
         }
         #endregion
 
-        #region Reserva
-        public async Task<List<ReservaModel>> ListarReserva()
+        #region PERFIL
+        public async Task<List<PerfilModel>> ListarPerfil(PerfilModel P_Entidad)
         {
-            List<ReservaModel> lstresultados = new List<ReservaModel>();
+            List<PerfilModel> lstresultados = new List<PerfilModel>();
             GestorDeConexiones();
-            string url = "api/Reserva/Consultar";
+            string url = "api/Proyecto2/ConsultarPerfil";
             HttpResponseMessage resultado = await Cliente.GetAsync(url);
 
             if (resultado.IsSuccessStatusCode)
             {
                 var jsonSTRING = await resultado.Content.ReadAsStringAsync();
-                lstresultados = JsonConvert.DeserializeObject<List<ReservaModel>>(jsonSTRING);
+                lstresultados = JsonConvert.DeserializeObject<List<PerfilModel>>(jsonSTRING);
             }
 
             return lstresultados;
         }
 
-        public async Task<bool> AgregarReserva(ReservaModel P_Modelo)
+        public async Task<bool> AgregarPerfil(PerfilModel P_Modelo)
         {
-            string url = "api/Reserva/Agregar";
+            GestorDeConexiones();
+            string url = "api/Proyecto2/AgregarPerfil";
             HttpResponseMessage resultado = await Cliente.PostAsJsonAsync(url, P_Modelo);
             return resultado.IsSuccessStatusCode;
         }
 
-        public async Task<bool> EliminarReserva(ReservaModel P_Modelo)
+        public async Task<bool> EliminarPerfil(PerfilModel P_Modelo)
         {
-            string url = "api/Reserva/Eliminar";
+            GestorDeConexiones();
+            string url = "api/Proyecto2/EliminarPerfil";
             HttpResponseMessage resultado = await Cliente.PostAsJsonAsync(url, P_Modelo);
             return resultado.IsSuccessStatusCode;
         }
 
-        public async Task<bool> ModificarReserva(ReservaModel P_Modelo)
+        public async Task<bool> ModificarPerfil(PerfilModel P_Modelo)
         {
-            string url = "api/Reserva/Modificar";
+            GestorDeConexiones();
+            string url = "api/Proyecto2/ModificarPerfil";
             HttpResponseMessage resultado = await Cliente.PostAsJsonAsync(url, P_Modelo);
             return resultado.IsSuccessStatusCode;
         }

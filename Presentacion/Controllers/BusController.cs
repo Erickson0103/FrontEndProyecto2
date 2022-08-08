@@ -28,16 +28,16 @@ namespace Presentacion.Controllers
 
              GestorConexiones objconexion = new GestorConexiones();
              List<BusModel> lstresultados = await objconexion.ListarBus(new BusModel { PlacaUnidad = id });
-             BusModel cliente = lstresultados.Find(x => x.PlacaUnidad.Equals(id));
+             BusModel bus = lstresultados.Find(x => x.PlacaUnidad.Equals(id));
 
-             return View(cliente);
+             return View(bus);
         
          }
 
       
-        public async Task<IActionResult> Eliminar(BusModel c)
+        public async Task<IActionResult> Eliminar(BusModel b)
         {
-            string Placa = c.PlacaUnidad;
+            string Placa = b.PlacaUnidad;
             GestorConexiones objconexion = new GestorConexiones();
             List<BusModel> lstresultados = await objconexion.ListarBus(new BusModel { PlacaUnidad = string.Empty });
             BusModel cliente = lstresultados.Find(x => x.PlacaUnidad.Equals(Placa));

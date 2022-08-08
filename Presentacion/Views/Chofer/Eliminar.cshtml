@@ -10,47 +10,48 @@
 <div>
     <h4>ChofernModel</h4>
     <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.IdChofer)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.IdChofer)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Nombre1Chofer)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Nombre1Chofer)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Nombre2Chofer)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Nombre2Chofer)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Apellido1Chofer)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Apellido1Chofer)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Apellido2Chofer)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Apellido2Chofer)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TelefonoChofer)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TelefonoChofer)
-        </dd>
-    </dl>
-    
+
     <form asp-action="Eliminar_Chofer" asp-controller="Chofer" method="post">
-        <input type="submit" value="Eliminar_Chofer" class="btn btn-danger" /> |
-        <a asp-action="Index">Volver a la lista</a>
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for="IdChofer" class="control-label"></label>
+            <input asp-for="IdChofer" readonly="readonly" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Nombre1Chofer" class="control-label"></label>
+            <input asp-for="Nombre1Chofer" readonly="readonly" class="form-control" />
+            <span asp-validation-for="Nombre1Chofer" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Nombre2Chofer" class="control-label"></label>
+            <input asp-for="Nombre2Chofer" readonly="readonly" class="form-control" />
+            <span asp-validation-for="Nombre2Chofer" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Apellido1Chofer" class="control-label"></label>
+            <input asp-for="Apellido1Chofer" readonly="readonly" class="form-control" />
+            <span asp-validation-for="Apellido1Chofer" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Apellido2Chofer" class="control-label"></label>
+            <input asp-for="Apellido2Chofer" readonly="readonly" class="form-control" />
+            <span asp-validation-for="Apellido2Chofer" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="TelefonoChofer" class="control-label"></label>
+            <input asp-for="TelefonoChofer" readonly="readonly" class="form-control" />
+            <span asp-validation-for="TelefonoChofer" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Eliminar" class="btn btn-danger" />
+        </div>
+
     </form>
+    <div>
+        <br />
+        <a asp-action="Index">Volver a la lista</a>
+    </div>
 </div>

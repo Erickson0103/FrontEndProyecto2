@@ -62,7 +62,7 @@ namespace Presentacion.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Eliminar_Habitacion(ChoferModel P_Modelo)
+        public async Task<IActionResult> Eliminar_Chofer(ChoferModel P_Modelo)
         {
             GestorConexiones objconexion = new GestorConexiones();
             await objconexion.EliminarChofer(P_Modelo);
