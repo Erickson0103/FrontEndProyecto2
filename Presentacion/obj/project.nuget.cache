@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zMgzcSjJ/ax+TxjxnVTMP8yhfJbBCkm8N8/w9K9SRP+uMYSWh8lEM3VT7qmEjt0AgrPx3DdEX43uM9/hWoTxQw==",
+  "dgSpecHash": "bj+V4bVF+J/9T9mUxj0O6+2OJuPu0n5qOKvOetwHuvna5rICf3mNE/3FnxFXa+NCWwDw0aQQrSSfbtB+2DXOqQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\SSequeira\\Source\\Repos\\FrontEndProyecto2\\Presentacion\\Presentacion.csproj",
+  "projectFilePath": "C:\\Users\\SSequeira\\source\\repos\\FrontEndProyecto2\\Presentacion\\Presentacion.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SSequeira\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
     "C:\\Users\\SSequeira\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
